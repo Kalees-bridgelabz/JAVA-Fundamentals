@@ -53,5 +53,14 @@ public class AddressBookMain {
         System.out.println("\nSaved Contacts:");
         addressBook.displayContacts();
 
+        // UC2 Edit Contact
+        System.out.print("\nEnter First Name to Edit: ");
+        String nameToEdit = sc.nextLine();
+
+        addressBook.editContact(nameToEdit, sc);
+
+        System.out.println("\nUpdated Contacts:");
+        addressBook.displayContacts();
+
     }
 }
