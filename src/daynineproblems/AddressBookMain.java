@@ -1,5 +1,10 @@
 package daynineproblems;
 
+import daynineproblems.classes.AddressBook;
+import daynineproblems.classes.Contact;
+
+import java.util.Scanner;
+
 public class AddressBookMain {
     public static void main(String[] args) {
         System.out.println("===================================================================");
@@ -11,6 +16,42 @@ public class AddressBookMain {
         System.out.println("===================================================================");
         System.out.println("===================================================================");
         System.out.println("===================================================================");
+
+        Scanner sc = new Scanner(System.in);
+        AddressBook addressBook = new AddressBook();
+
+        System.out.print("Enter First Name: ");
+        String firstName = sc.nextLine();
+
+        System.out.print("Enter Last Name: ");
+        String lastName = sc.nextLine();
+
+        System.out.print("Enter Address: ");
+        String address = sc.nextLine();
+
+        System.out.print("Enter City: ");
+        String city = sc.nextLine();
+
+        System.out.print("Enter State: ");
+        String state = sc.nextLine();
+
+        System.out.print("Enter Zip: ");
+        long zip = sc.nextLong();
+
+        System.out.print("Enter Phone Number: ");
+        long phoneNumber = sc.nextLong();
+        sc.nextLine(); // consume newline
+
+        System.out.print("Enter Email: ");
+        String email = sc.nextLine();
+
+        Contact contact = new Contact(firstName, lastName, address,
+                city, state, zip, phoneNumber, email);
+
+        addressBook.addContact(contact);
+
+        System.out.println("\nSaved Contacts:");
+        addressBook.displayContacts();
 
     }
 }
