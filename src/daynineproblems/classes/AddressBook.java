@@ -1,6 +1,7 @@
 package daynineproblems.classes;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class AddressBook {
@@ -45,6 +46,26 @@ public class AddressBook {
                 c.email = sc.nextLine();
 
                 System.out.println("Contact updated successfully!");
+                break;
+            }
+        }
+
+        if (!found) {
+            System.out.println("Contact not found!");
+        }
+    }
+
+    public void deleteContact(String name) {
+        boolean found = false;
+
+        Iterator<Contact> iterator = contactList.iterator();
+
+        while (iterator.hasNext()) {
+            Contact c = iterator.next();
+            if (c.firstName.equalsIgnoreCase(name)) {
+                iterator.remove();
+                found = true;
+                System.out.println("Contact deleted successfully!");
                 break;
             }
         }

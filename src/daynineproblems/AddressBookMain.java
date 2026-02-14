@@ -57,9 +57,15 @@ public class AddressBookMain {
         System.out.print("\nEnter First Name to Edit: ");
         String nameToEdit = sc.nextLine();
 
-        addressBook.editContact(nameToEdit, sc);
+        System.out.println("\nAfter Edit:");
+        addressBook.displayContacts();
 
-        System.out.println("\nUpdated Contacts:");
+        // UC3 Delete Contact
+        System.out.print("\nEnter First Name to Delete: ");
+        String nameToDelete = sc.nextLine();
+        addressBook.deleteContact(nameToDelete);
+
+        System.out.println("\nFinal Contacts:");
         addressBook.displayContacts();
 
     }
